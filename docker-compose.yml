@@ -7,7 +7,7 @@ networks:
 services:
 
   proxy:
-    image: horalstvo/nginx-ldap
+    image: nginx
     container_name: proxy
     volumes:
       - ./proxy/nginx.conf:/etc/nginx/nginx.conf:ro
