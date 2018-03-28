@@ -46,19 +46,19 @@ echo "Installing Docker..."
  	service docker start
 
 echo "Configuring docker..."
-	usermod -aG docker vagrant
+	usermod -aG docker ubuntu
 
 echo "Installing Docker Compose..."
 	pip install docker-compose > /dev/null
 
 echo "Creating jenkins directory..."
-	mkdir /home/vagrant/jenkins/
+	mkdir /home/ubuntu/jenkins/
 
 echo "Setting aliases..."
-	echo "alias c=clear" >> /home/vagrant/.bash_aliases
+	echo "alias c=clear" >> /home/ubuntu/.bash_aliases
 
 echo "Getting Vundle for Vi..."
-	git clone https://github.com/VundleVim/Vundle.vim.git /home/vagrant/.vim/bundle/Vundle.vim
+	git clone https://github.com/VundleVim/Vundle.vim.git /home/ubuntu/.vim/bundle/Vundle.vim
 
 echo "Configuring swap space..."
 	fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile && \
