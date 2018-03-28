@@ -20,10 +20,9 @@ services:
       - grafana
 
   tomcat:
-    container_name: ${SERVICE_NAME}
+    container_name: tomcat
     restart: always
     image: tomcat:8.0
-    net: ${DOCKER_NETWORK_NAME}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     privileged: true
