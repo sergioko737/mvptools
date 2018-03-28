@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure("2") do |config|
+ubuntu.configure("2") do |config|
 
   config.vm.hostname = "workstation"
   
@@ -17,10 +17,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", path: "provision.sh"
 
-  # config.vm.provision "docker" do |d|
-  #   d.run "jenkins",
-  #     image: "jenkins:alpine",
-  #     args: "-p 8080:8080 --rm -v /home/vagrant/jenkins/:/var/jenkins_home/"
-  # end
+   config.vm.provision "docker" do |d|
+     d.run "jenkins",
+       image: "jenkins:alpine",
+       args: "-p 8080:8080 --rm -v /home/ubuntu/jenkins/:/var/jenkins_home/"
+   end
 
 end
