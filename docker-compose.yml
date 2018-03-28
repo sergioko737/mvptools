@@ -27,7 +27,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     privileged: true
     expose:
-      - "80"
+      - "8089"
     labels:
       - "PROJECT_NAME=${PROJECT_NAME}"
       - "ENVIRONMENT_NAME=${ENVIRONMENT_NAME}"
